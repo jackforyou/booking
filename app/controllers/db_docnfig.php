@@ -6,11 +6,11 @@ class MySQL
 	public static function connectDB()
 	{
 	$servername = "localhost";
-	$username = "u379384402_jack";
-	$password = "Bk010172289";
+	$username = "";
+	$password = "";
 
 	try {
-	    $conn = new PDO("mysql:host=$servername;dbname=u379384402_lym", $username, $password);
+	    $conn = new PDO("mysql:host=$servername;dbname=", $username, $password);
 	    // set the PDO error mode to exception
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    echo "Connected successfully"; 
