@@ -1,7 +1,6 @@
 <?php
 
 // Kickstart the framework
-require 'app/controllers/db_docnfig.php';
 $f3=require('lib/base.php');
 $f3->set('AUTOLOAD', 'app/controllers/');
 $db = new PDO_DB_Config\MySQL();
