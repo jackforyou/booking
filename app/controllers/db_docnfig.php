@@ -1,18 +1,23 @@
 <?php
 
 namespace PDO_DB_Config;
+use PDO;
 class MySQL
 {
-	public static function connectDB()
+	public $conn;
+	public $firstname;
+	public $lastname;
+	public $email;
+	public function connectDB()
 	{
 	$servername = "localhost";
-	$username = "u379384402_jack";
-	$password = "Bk010172289";
+	$username = "root";
+	$password = "";
 
 	try {
-	    $conn = new PDO("mysql:host=$servername;dbname=u379384402_lym", $username, $password);
+	    $this->conn = new PDO("mysql:host=$servername;dbname=", $username, $password);
 	    // set the PDO error mode to exception
-	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    echo "Connected successfully"; 
 	    // prepare sql and bind parameters
 	    $stmt = $conn->prepare("INSERT INTO member (username, password, email) 

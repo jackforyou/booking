@@ -1,13 +1,23 @@
 <style type="text/css" media="screen">
-
+		.content-main{
+		    position: relative;
+		    width: 100%;
+		    height: 100%;
+		    overflow-y: auto;
+		    background: url("ui/images/bg-pattern.png"), #fdcc52; /* fallback for old browsers */
+		    background: url("ui/images/bg-pattern.png"), -webkit-linear-gradient(to left, #dc2430 , #7b4397); /* Chrome 10-25, Safari 5.1-6 */
+		    background: url("ui/images/bg-pattern.png"), linear-gradient(to left, #dc2430 , #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
 		.bg-fullscreen{
 			position: relative;
-			background-color: #9016dc;
-			height: 1200px;
-			max-height: 1400px;
+			height: 100%;
+			width: 100%;
 		}
 		.x-margin{
-			padding-top: 20%;
+			padding-top: 10%;
+		}
+		.limit-width{
+			width: 80%;
 		}
 
 </style>
@@ -19,56 +29,73 @@
 		</div>
 	</div>
 </nav>
-<div class="bg-fullscreen">
+<div class="content-main bg-fullscreen">
 	<div class="container">
 		<div class="x-margin">
-			<div class="jumbotron">
-				<form action="" method="POST" role="form">
+			<div class="jumbotron limit-width">
+				<form action="add-booking" method="GET" role="form">
 					<legend>Booking Form</legend>
 					<div class="form-group">
 						<label for="">Company Name</label>
-						<input type="text" class="form-control" id="" placeholder="Input field">
+						<input type="text" class="form-control" id="" placeholder="Thai Marano Co., Ltd.">
+					</div>
+					<div class="form-group">
+						<label for="">Contact Name</label>
+						<input type="text" class="form-control" id="" placeholder="John Max">
+					</div>
+					<div class="form-group">
+						<label for="">Contact Phone</label>
+						<input type="text" class="form-control" id="" placeholder="66-897-8877">
+					</div>
+					<div class="form-group">
+						<label for="">Contact Fax</label>
+						<input type="text" class="form-control" id="" placeholder="66-897-887">
+					</div>
+					<div class="form-group">
+						<label for="">Contact E-mail</label>
+						<input type="text" class="form-control" id="" placeholder="info@marano.com">
+					</div>
+					<div class="form-group">
+						<label for="">Country</label>
+						<input type="text" class="form-control" id="" placeholder="Thailand">
 					</div>
 					<div class="form-group">
 						<label for="">Package</label>
 						<div class="radio">
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio"  name="optradio" id="input" value="op1" checked="checked">
+								RELAX IN THAILAND PARADISE ISLAND
 							</label>
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio"  name="optradio" id="input" value="op2" >
+								SWIM & DIVE WITH FISH & LEOPARD SHARKS 
 							</label>
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio" name="optradio" id="input" value="op3" >
+								FULL MOON PARTY ON THE BEACH
 							</label>
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio"  name="optradio" id="input" value="op4">
+								KO SAMUI & KAYAK AT ANGTHONG MARINE PARK
 							</label>
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio" name="optradio" id="input" value="op5" >
+								SNORKEL & KAYAK AT ANGTHONG MARINE PARK
 							</label>
-							<label>
-								<input type="radio" name="" id="input" value="" checked="checked">
-								Radio Box
+							<label class="col-md-12">
+								<input type="radio"  name="optradio" id="input" value="op6">
+								RELAX IN SAMUI ISLAND & SIGTSEEING TOUR
 							</label>
 						</div>
+						<label for=""></label>
 					</div>
 					<div class="form-group">
 						<label for="">Starting date</label>
-						<input type="date" class="form-control" id="" placeholder="Input field">
-					</div>
-					<div class="form-group">
-						<label for="">E-mail</label>
-						<input type="text" class="form-control" id="" placeholder="Input field">
+						<input type="date" name="date" class="form-control" id="" placeholder="05/08/2016">
 					</div>
 					<div class="form-group">
 						<label for="">Note</label>
-						<textarea class="form-control" name=""></textarea>
+						<textarea class="form-control" rows="5" name=""></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>

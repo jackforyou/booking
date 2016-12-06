@@ -1,7 +1,10 @@
 <?php
 
 // Kickstart the framework
+require 'app/controllers/db_docnfig.php';
 $f3=require('lib/base.php');
+$f3->set('AUTOLOAD', 'app/controllers/');
+$db = new PDO_DB_Config\MySQL();
 
 $f3->set('DEBUG',1);
 if ((float)PCRE_VERSION<7.9)
@@ -14,6 +17,14 @@ $f3->route('GET /book',
     function($f3) {
     	$f3->set('content','view/booking-content.htm');
         echo View::instance()->render('view/booking-layout.htm');
+    }
+);
+$f3->route('GET /add-booking',
+    function($f3) use($db) {
+    	$db->firstname = $f3->get('GET.optradio');
+    	echo $db->firstname;
+        // $f3->set('content','view/booking-content.htm');
+        // echo View::instance()->render('view/booking-layout.htm');
     }
 );
 $f3->route('GET /',
